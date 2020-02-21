@@ -1,0 +1,45 @@
+{
+  "name": "postal-devtool",
+  "scripts": {
+    "build": "INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build",
+    "start": "react-scripts start"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-modules-amd": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "react-app-rewired": "^2.1.5",
+    "react-script": "^2.0.5",
+    "react-scripts": "^3.4.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@rematch/core": "^1.3.0",
+    "codemirror": "^5.51.0",
+    "eventemitter2": "^6.0.0",
+    "react": "^16.12.0",
+    "react-codemirror2": "^6.0.0",
+    "react-dom": "^16.12.0",
+    "react-json-view": "^1.19.1",
+    "react-split": "^2.0.7",
+    "react-split-pane": "^0.1.89",
+    "react-virtualized": "^9.21.2"
+  },
+  "homepage": ""
+}
