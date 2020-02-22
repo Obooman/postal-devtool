@@ -1,10 +1,19 @@
 import React, { PureComponent } from "react";
-import EventItem from "./components/EventItem";
-import JSONData from "./components/JSONData";
+import EventList, { syncToBottom } from "./components/EventList";
 import SplitPane from "react-split-pane";
 import bridge from "./bridge";
+import JSONData from "./components/JSONData";
+import { connect } from "react-redux";
 
-export default class App extends PureComponent {
+if (window.chrome.devtools.panels.themeName === "light") {
+  import("./light.css").then();
+}
+
+if (window.chrome.devtools.panels.themeName === "dark") {
+  import("./dark.css").then();
+}
+
+class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,34 +21,26 @@ export default class App extends PureComponent {
       currentItem: -1
     };
 
-    this.dataMap = {};
+    bridge.on("publication", this.addEntry);
 
-    bridge.on("publication", entry => {
-      this.setState({
-        events: this.state.events.concat([entry])
-      });
-    });
+    document.addEventListener("keyup", function(ev) {
+      const { currentItem, events, dispatch } = props;
 
-    document.addEventListener("keyup", ev => {
+      ev.preventDefault();
+
       const { code } = ev;
       if (code === "ArrowUp") {
-        var previousOne = Math.max(this.state.currentItem - 1, 0);
-        this.setState({
-          currentItem: previousOne
-        });
+        var previousOne = Math.max(currentItem - 1, 0);
+        dispatch.global.changeCurrentItem(previousOne);
       } else if (code === "ArrowDown") {
-        var nextOne = Math.min(
-          this.state.currentItem + 1,
-          this.state.events.length - 1
-        );
-        this.setState({
-          currentItem: nextOne
-        });
+        var nextOne = Math.min(currentItem + 1, events.length - 1);
+        dispatch.global.changeCurrentItem(nextOne);
       }
     });
   }
 
   render() {
+    const { events, currentItem } = this.props;
     return (
       <div className="container">
         <div className="toolbar">
@@ -52,28 +53,10 @@ export default class App extends PureComponent {
         </div>
         <div style={{ position: "relative", flex: 1 }}>
           <SplitPane split="vertical" defaultSize="300">
-            <div
-              style={{
-                overflowX: "hidden",
-                overflowY: "scroll",
-                height: "100%"
-              }}
-            >
-              {this.state.events.map((event, index) => (
-                <EventItem
-                  event={event}
-                  active={this.state.currentItem}
-                  clickHandler={this.setItem}
-                  key={event.timestamp + index}
-                  index={index}
-                ></EventItem>
-              ))}
-            </div>
+            <EventList />
             <div>
-              {this.state.events[this.state.currentItem] && (
-                <JSONData
-                  json={this.state.events[this.state.currentItem]}
-                ></JSONData>
+              {events[currentItem] && (
+                <JSONData json={events[currentItem]}></JSONData>
               )}
             </div>
           </SplitPane>
@@ -82,16 +65,24 @@ export default class App extends PureComponent {
     );
   }
 
-  setItem = index => {
-    this.setState({
-      currentItem: index
-    });
+  clear = () => {
+    this.props.dispatch.global.clear();
   };
 
-  clear = () => {
-    this.setState({
-      currentItem: -1,
-      events: []
-    });
+  addEntry = entry => {
+    this.props.dispatch.global.pushEvent(entry);
+    if (this.props.sticky) {
+      syncToBottom();
+    }
   };
 }
+
+const mapStateToProps = function(state) {
+  return {
+    currentItem: state.global.currentItem,
+    events: state.global.events,
+    sticky: state.global.sticky
+  };
+};
+
+export default connect(mapStateToProps, null)(App);

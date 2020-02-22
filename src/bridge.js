@@ -10,6 +10,9 @@ if (!window.chrome || !window.chrome.devtools) {
     devtools: {
       inspectedWindow: {
         tabId: 12
+      },
+      panels: {
+        themeName: "light"
       }
     }
   };

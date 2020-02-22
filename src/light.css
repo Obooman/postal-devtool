@@ -50,6 +50,22 @@ select.toolbar-item {
   margin-bottom: 2px;
 }
 
+
+input {
+  border: none;
+  box-shadow: 0 0 0 1px #d8d8d8;
+  width: 163px;
+  height: 20px;
+  box-sizing: border-box;
+  padding: 2px;
+
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #0e639c;
+}
+
 .toolbar-item {
   padding: 0 5px 0 2px;
 }
