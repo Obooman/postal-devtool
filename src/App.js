@@ -5,7 +5,7 @@ import bridge from "./bridge";
 import JSONData from "./components/JSONData";
 import { connect } from "react-redux";
 
-if (window.chrome.devtools.panels.themeName === "light") {
+if (window.chrome.devtools.panels.themeName === "default") {
   import("./light.css").then();
 }
 
