@@ -24,6 +24,18 @@ body {
   font-family: ".SFNSDisplay-Regular", "Helvetica Neue", "Lucida Grande",
     sans-serif;
   border-radius: 0;
+  outline: none;
+  border: none;
+  opacity: 0.8;
+  background: transparent;
+}
+
+.toolbar-button:hover {
+  opacity: 1
+}
+
+.toolbar-button:active {
+  opacity: 0.8
 }
 
 .toolbar-shadow {

@@ -1,6 +1,6 @@
 import EventEmitter from "eventemitter2";
 
-if (!window.chrome || !window.chrome.devtools) {
+if (process.env.NODE_ENV === "development") {
   window.chrome = {
     runtime: {
       connect() {
@@ -12,7 +12,7 @@ if (!window.chrome || !window.chrome.devtools) {
         tabId: 12
       },
       panels: {
-        themeName: "light"
+        themeName: "default"
       }
     }
   };

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 let element;
 
-function EventList({ events, currentItem, dispatch }) {
+function EventList({ filteredItems, currentItem, dispatch }) {
   element = useRef(null);
 
   return (
@@ -24,7 +24,7 @@ function EventList({ events, currentItem, dispatch }) {
         }
       }}
     >
-      {events.map((event, index) => (
+      {filteredItems.map((event, index) => (
         <EventItem
           event={event}
           active={currentItem}
@@ -44,7 +44,7 @@ export const syncToBottom = function() {
 };
 
 const mapStateToProps = state => ({
-  events: state.global.events,
+  filteredItems: state.global.filteredItems,
   currentItem: state.global.currentItem
 });
 
