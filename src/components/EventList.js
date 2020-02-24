@@ -6,8 +6,6 @@ import store from "../model/index";
 const lineHeight = 24;
 let element;
 
-let pressDownInterval;
-
 document.addEventListener("keydown", ev => {
   const { code } = ev;
   if (/ArrowUp|ArrowDown/.test(code)) {
