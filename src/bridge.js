@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "development") {
         tabId: 12
       },
       panels: {
-        themeName: "default"
+        themeName: "dark"
       }
     }
   };

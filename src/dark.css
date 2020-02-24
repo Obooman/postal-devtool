@@ -26,6 +26,10 @@ body {
   font-family: ".SFNSDisplay-Regular", "Helvetica Neue", "Lucida Grande",
     sans-serif;
   border-radius: 0;
+  outline: none;
+  border: none;
+  opacity: 0.8;
+  background: transparent;
 }
 
 .toolbar-shadow {
@@ -95,6 +99,8 @@ input:focus {
   font-family: ".SFNSDisplay-Regular", "Helvetica Neue", "Lucida Grande",
     sans-serif;
   cursor: pointer;
+  height: 24px;
+  box-sizing: border-box;
 }
 
 .event-row:nth-child(2n-1) {

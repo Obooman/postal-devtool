@@ -107,6 +107,8 @@ input:focus {
     sans-serif;
   border-bottom: 1px solid #eee;
   cursor: pointer;
+  height: 24px;
+  box-sizing: border-box;
 }
 
 .event-row:nth-child(2n-1) {

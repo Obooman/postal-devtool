@@ -32,5 +32,5 @@ if (process.env.NODE_ENV === "development") {
     if (store.getState().global.sticky) {
       syncToBottom();
     }
-  }, 1000);
+  }, 600);
 }

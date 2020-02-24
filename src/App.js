@@ -19,25 +19,6 @@ class App extends PureComponent {
     super(props);
 
     bridge.on("publication", this.addEntry);
-
-    document.addEventListener("keydown", ev => {
-      if (/ArrowUp|ArrowDown/.test(ev.code)) {
-        ev.preventDefault();
-      }
-    });
-
-    document.addEventListener("keyup", ev => {
-      const { currentItem, filteredItems, dispatch } = this.props;
-
-      const { code } = ev;
-      if (code === "ArrowUp") {
-        var previousOne = Math.max(currentItem - 1, 0);
-        dispatch.global.changeCurrentItem(previousOne);
-      } else if (code === "ArrowDown") {
-        var nextOne = Math.min(currentItem + 1, filteredItems.length - 1);
-        dispatch.global.changeCurrentItem(nextOne);
-      }
-    });
   }
 
   render() {
