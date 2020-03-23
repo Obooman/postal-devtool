@@ -101,6 +101,7 @@ input:focus {
   cursor: pointer;
   height: 24px;
   box-sizing: border-box;
+  white-space:nowrap;
 }
 
 .event-row:nth-child(2n-1) {
