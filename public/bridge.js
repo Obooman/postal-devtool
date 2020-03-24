@@ -6,9 +6,9 @@
   window.addEventListener("message", function(e) {
     if (e.source === window) {
       var data = e.data;
-      if (data.__fromPostaljsDevtoolsApp) {
+      if (data.__postalDevToolRef) {
         if (data.type === "pending") {
-          if (window.__postaljsDevtoolsRef) {
+          if (window.__postalDevToolRef) {
             notifyApp();
           }
         }
@@ -17,8 +17,8 @@
   });
 
   function attempt() {
-    if (window.__postaljsDevtoolsRef) {
-      init(window.__postaljsDevtoolsRef);
+    if (window.__postalDevToolRef) {
+      init(window.__postalDevToolRef);
       notifyApp();
     } else {
       setTimeout(attempt, ATTEMPTS_INTERVAL);

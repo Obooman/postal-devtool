@@ -7,5 +7,5 @@
     factory(root.postal);
   }
 })(this, function(postal) {
-  window.__postaljsDevtoolsRef = postal;
+  window.__postalDevToolRef = postal;
 });
