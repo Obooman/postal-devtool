@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: #242424;
-  color: #bdc6cf
+  color: #bdc6cf;
 }
 
 .toolbar {
@@ -63,7 +63,7 @@ input {
   height: 20px;
   box-sizing: border-box;
   padding: 2px;
-
+  color: #b9b9b9;
 }
 
 input:focus {
@@ -101,7 +101,7 @@ input:focus {
   cursor: pointer;
   height: 24px;
   box-sizing: border-box;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .event-row:nth-child(2n-1) {
@@ -118,7 +118,7 @@ input:focus {
 
 .event-row.selected {
   color: white;
-  background: #19639C;
+  background: #19639c;
 }
 
 .Resizer {
