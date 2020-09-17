@@ -59,6 +59,7 @@ input {
   padding: 2px;
   display: block;
   width: 100%;
+  font-family: Menlo, Monaco, "Andale Mono", "Cascadia Mono", Consolas, "Lucida Console", "San Francisco Mono", "DejaVu Sans Mono", monospace;
 }
 
 input:focus {
