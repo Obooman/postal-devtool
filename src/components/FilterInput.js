@@ -20,15 +20,13 @@ function FilterInput({ dispatch, recording }) {
   };
 
   return (
-    <div className="toolbar">
-      <div className="toolbar-item" style={{ display: "inline-block" }}>
-        <input
-          value={inputValue}
-          type="text"
-          placeholder="Filter"
-          onChange={changeHandler}
-        />
-      </div>
+    <div className="toolbar-item">
+      <input
+        value={inputValue}
+        type="text"
+        placeholder="Filter"
+        onChange={changeHandler}
+      />
     </div>
   );
 }

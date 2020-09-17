@@ -49,19 +49,6 @@ body {
   align-items: center;
 }
 
-select.toolbar-item {
-  min-width: 38px;
-  -webkit-appearance: none;
-  border: 0;
-  border-radius: 0;
-  padding: 0 13px 0 5px;
-  margin-right: -10px;
-  position: relative;
-  height: 22px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
 
 input {
   border: none;
@@ -70,7 +57,9 @@ input {
   height: 20px;
   box-sizing: border-box;
   padding: 2px;
-
+  display: block;
+  width: 100%;
+  font-family: Menlo, Monaco, "Andale Mono", "Cascadia Mono", Consolas, "Lucida Console", "San Francisco Mono", "DejaVu Sans Mono", monospace;
 }
 
 input:focus {
@@ -80,6 +69,7 @@ input:focus {
 
 .toolbar-item {
   padding: 0 5px 0 2px;
+  flex: 1 1 auto;
 }
 
 .CodeMirror {
