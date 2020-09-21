@@ -14,10 +14,14 @@ function Toolbar({ dispatch, recording }) {
   return (
     <div className="toolbar">
       <button className="toolbar-button" onClick={toggleRecord}>
-        <span role="img">{recording ? "🔴" : "⚫️"}</span>
+        <span role="img" aria-label="recording button">
+          {recording ? "🔴" : "⚫️"}
+        </span>
       </button>
       <button className="toolbar-button" onClick={clearRecords}>
-        <span role="img">🚫</span>
+        <span role="img" aria-label="clear">
+          🚫
+        </span>
       </button>
       <FilterInput />
     </div>
@@ -25,7 +29,7 @@ function Toolbar({ dispatch, recording }) {
 }
 
 const mapStateToProps = ({ global }) => ({
-  recording: global.recording
+  recording: global.recording,
 });
 
 export default connect(mapStateToProps, null)(Toolbar);

@@ -159,3 +159,12 @@ input:focus {
 .Resizer.disabled:hover {
   border-color: transparent;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 20px;
+  background-color: #5c5c5c;
+}

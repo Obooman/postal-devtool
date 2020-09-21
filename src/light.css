@@ -31,11 +31,11 @@ body {
 }
 
 .toolbar-button:hover {
-  opacity: 1
+  opacity: 1;
 }
 
 .toolbar-button:active {
-  opacity: 0.8
+  opacity: 0.8;
 }
 
 .toolbar-shadow {
@@ -49,7 +49,6 @@ body {
   align-items: center;
 }
 
-
 input {
   border: none;
   box-shadow: 0 0 0 1px #d8d8d8;
@@ -59,7 +58,8 @@ input {
   padding: 2px;
   display: block;
   width: 100%;
-  font-family: Menlo, Monaco, "Andale Mono", "Cascadia Mono", Consolas, "Lucida Console", "San Francisco Mono", "DejaVu Sans Mono", monospace;
+  font-family: Menlo, Monaco, "Andale Mono", "Cascadia Mono", Consolas,
+    "Lucida Console", "San Francisco Mono", "DejaVu Sans Mono", monospace;
 }
 
 input:focus {
@@ -99,7 +99,7 @@ input:focus {
   cursor: pointer;
   height: 24px;
   box-sizing: border-box;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .event-row:nth-child(2n-1) {
@@ -164,4 +164,13 @@ input:focus {
 
 .Resizer.disabled:hover {
   border-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 20px;
+  background-color: #5c5c5c;
 }
