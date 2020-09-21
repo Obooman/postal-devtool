@@ -27,7 +27,7 @@ jobs:
     
     - run: npm ci
     - run: npm run build --if-present
-    - run: zip -r build postal-devtool.zip
+    - run: zip -r postal-devtool.zip build
       
     - name: Create Release
       id: create_release
