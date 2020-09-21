@@ -24,10 +24,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    
     - run: npm ci
     - run: npm run build --if-present
-      
-    - name: ZIP output
     - run: zip --junk-paths build
       
     - name: Create Release
@@ -40,6 +39,7 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
+      
     - name: Upload Release Asset
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
